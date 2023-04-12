@@ -87,5 +87,13 @@
           "project":"Cognizant internal",
           "manager":"Alex",
           "gender":"M"
+      },
+      {
+        "name":"Peter",
+          "empID":123766,
+          "skill":"Java",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
       }
   ]
