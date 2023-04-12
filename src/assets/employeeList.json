@@ -1,0 +1,91 @@
+[
+  
+    {
+      "name":"John",
+      "empID": 123456,
+      "skill":"React",
+      "project":"Cognizant internal",
+      "manager":"Alex",
+      "gender":"M"
+      },
+      {
+        "name":"Jolly",
+          "empID": 123466,
+          "skill":"Angular",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"F"
+      },
+      {
+        "name":"James",
+          "empID":123454,
+          "skill":"Java, Python",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      },
+      {
+        "name":"Jonas",
+          "empID":123416,
+          "skill":"Angular",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      },
+      {
+        "name":"Jammie",
+        "empID":123459,
+          "skill":"Database",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      },
+      {
+        "name":"Jasmine",
+          "empID":123256,
+          "skill":"React",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"F"
+      },
+      {
+        "name":"Jarred",
+          "empID":193456,
+          "skill":"Java",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      },
+      {
+        "name":"Jacob",
+          "empID":123156,
+          "skill":"Python",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      },
+      {
+        "name":"Jane",
+          "empID":123856,
+          "skill":"React",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"F"
+      },
+      {
+        "name":"Julia",
+          "empID":173456,
+          "skill":"Javascript",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"F"
+      },
+      {
+        "name":"Donald",
+          "empID":173434,
+          "skill":"Python",
+          "project":"Cognizant internal",
+          "manager":"Alex",
+          "gender":"M"
+      }
+  ]

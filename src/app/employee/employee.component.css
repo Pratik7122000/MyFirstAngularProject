@@ -1,0 +1,47 @@
+.page {
+    color: white;
+    padding: 0 1rem;
+    background: #f1f5f9;
+    }
+    .page__box {
+      min-height: 120px;
+      background: #1e293b;
+      margin: 0 -1rem;
+      font-size: 36px;
+    }
+    .page__content{
+      min-height: calc(100vh - 178px);
+      
+      border-radius: 10px;
+      margin-top: -2rem;
+      background: white;
+      color: black;
+      font-size: 2rem;
+    }
+    /* .page__content-data {
+      min-height: calc(100vh - 178px);
+      
+      } */
+    
+      table {
+        background-color: #ffffff;
+        height: 10px;
+        width: 100%;
+        table-layout: fixed;
+        /* max-height: calc(100vh - 178px); */
+      }
+      /* .mat-mdc-table {
+        width: 100%;
+        overflow: auto;
+      } */
+      table th{
+        font-weight: 600;
+      }
+
+      mat-form-field{
+        width: 100%;
+      }
+   
+      table tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }

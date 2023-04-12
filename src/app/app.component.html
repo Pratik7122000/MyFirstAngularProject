@@ -1,0 +1,53 @@
+
+<div class="wrapper">
+<mat-drawer-container>
+    
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+        <app-side-nav></app-side-nav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p>This is my first page</p>
+
+ Interpolation -->
+<!-- <h4>My name is {{ name }}</h4>
+
+<table    [style]="table">
+    
+    <tr [style]="tableRow">
+        <th>Sl.No</th>
+        <th>Price</th>
+        <th>Name</th>
+        <th>Rating</th>
+    </tr>
+    <tr *ngFor="let item of products, index as i;"    >
+        <td  [style]="tableData">{{i+1}}</td>
+        <td  [style]="tableData">{{item.Price}}</td>
+        <td  [style]="tableData">{{item.Name}}</td>
+        <td  [style]="tableData">{{item.Rating}}</td>
+    
+    </tr>
+</table> --> 
+
+
+
