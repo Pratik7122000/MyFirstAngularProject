@@ -6,5 +6,7 @@ export interface EmployeeInterface {
   manager: string;
   skill: string;
   gender: string;
-
+  taskGiven:number,
+  taskCompleted:number,
+  taskDetails:string,
 }

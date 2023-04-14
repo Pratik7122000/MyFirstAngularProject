@@ -37,7 +37,8 @@ export class EmployeeComponent implements OnInit, AfterViewInit {
     this.Getallemployee();
   }
 
-  displayedColumns: string[] = ['empID', 'name', 'project', 'manager','skill'];
+  displayedColumns: string[] = ['empID', 'name', 'project', 'taskDetails', 'taskGiven',
+  'taskCompleted', 'manager','skill'];
  
 
   //data :EmployeeInterface;

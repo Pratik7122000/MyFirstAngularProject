@@ -52,7 +52,21 @@
                     <th mat-header-cell mat-sort-header *matHeaderCellDef> Project </th>
                     <td mat-cell *matCellDef="let element"> {{element.project}} </td>
                   </ng-container>
+
+                  <ng-container matColumnDef="taskDetails">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Details </th>
+                    <td mat-cell *matCellDef="let element"> {{element.taskDetails}} </td>
+                  </ng-container>
                 
+                  <ng-container matColumnDef="taskGiven">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Given </th>
+                    <td mat-cell *matCellDef="let element"> {{element.taskGiven}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="taskCompleted">
+                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Completed </th>
+                    <td mat-cell *matCellDef="let element"> {{element.taskCompleted}} </td>
+                  </ng-container>
                   <!-- Symbol Column -->
                   <ng-container matColumnDef="manager">
                     <th mat-header-cell mat-sort-header *matHeaderCellDef> Manager </th>
