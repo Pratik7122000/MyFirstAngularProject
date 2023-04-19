@@ -1,15 +1,15 @@
-[
+{
+  "employees":[
   
     {
       "name":"John",
-      "empID": 123456,
+      "empID": 100001,
       "skill":"React",
       "project":"ABC Company",
       "taskGiven":4,
       "taskCompleted":2,
       "taskDetails":"merging",
-      "manager":"Alex",
-      "gender":"M"
+      "manager":"Alex"
       },
       {
         "name":"Jolly",
@@ -133,3 +133,4 @@
           "gender":"M"
       }
   ]
+}

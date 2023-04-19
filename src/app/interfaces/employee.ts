@@ -1,12 +1,13 @@
 export interface EmployeeInterface {
  
-  empID: number;
+  id: number
   name: string;
   project: string;
   manager: string;
   skill: string;
   gender: string;
-  taskGiven:number,
-  taskCompleted:number,
-  taskDetails:string,
+  taskGiven:number;
+  taskCompleted:number;
+  taskDetails:string;
+
 }

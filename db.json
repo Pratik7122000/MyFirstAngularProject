@@ -1,0 +1,144 @@
+{
+  "employees": [
+    {
+      "name": "Jolly",
+      "id": 100002,
+      "skill": "Angular",
+      "project": "Solutions",
+      "taskGiven": 5,
+      "taskCompleted": 2,
+      "taskDetails": "testing",
+      "manager": "Alex"
+    },
+    {
+      "name": "James",
+      "id": 100003,
+      "skill": "Java, Python",
+      "project": "ABC Company",
+      "taskGiven": 10,
+      "taskCompleted": 6,
+      "taskDetails": "training",
+      "manager": "Alex"
+    },
+    {
+      "name": "Jonas",
+      "id": 100004,
+      "skill": "Angular",
+      "project": "Solutions",
+      "taskGiven": 6,
+      "taskCompleted": 3,
+      "taskDetails": "flowchart",
+      "manager": "Alex"
+    },
+    {
+      "name": "Jammie",
+      "id": 100005,
+      "skill": "Database",
+      "project": "Solutions",
+      "taskGiven": 4,
+      "taskCompleted": 2,
+      "taskDetails": "visuals",
+      "manager": "Alex"
+    },
+    {
+      "id": 100006,
+      "name": "Jasmine",
+      "project": "ABC Company",
+      "taskDetails": "code",
+      "taskGiven": 10,
+      "taskCompleted": 2,
+      "manager": "Alex",
+      "skill": "React"
+    },
+    {
+      "name": "Jarred",
+      "id": 100007,
+      "skill": "Java",
+      "project": "Solutions",
+      "taskGiven": 4,
+      "taskCompleted": 2,
+      "taskDetails": "testing",
+      "manager": "Alex"
+    },
+    {
+      "name": "Jacob",
+      "id": 100008,
+      "skill": "Python",
+      "project": "ABC Company",
+      "taskGiven": 4,
+      "taskCompleted": 4,
+      "taskDetails": "debugging",
+      "manager": "Alex"
+    },
+    {
+      "name": "Jane",
+      "id": 100009,
+      "skill": "React",
+      "project": "ABC Company",
+      "taskGiven": 4,
+      "taskCompleted": 1,
+      "taskDetails": "debugging",
+      "manager": "Alex"
+    },
+    {
+      "name": "Julia",
+      "id": 100010,
+      "skill": "Javascript",
+      "project": "Solutions",
+      "taskGiven": 4,
+      "taskCompleted": 2,
+      "taskDetails": "logs",
+      "manager": "Alex"
+    },
+    {
+      "name": "Donald",
+      "id": 100011,
+      "skill": "Python",
+      "project": "Solutions",
+      "taskGiven": 6,
+      "taskCompleted": 2,
+      "taskDetails": "development",
+      "manager": "Alex"
+    },
+    {
+      "name": "Peter",
+      "id": 100012,
+      "skill": "Java",
+      "project": "Solutions",
+      "taskGiven": 4,
+      "taskCompleted": 2,
+      "taskDetails": "debugging",
+      "manager": "Alex"
+    },
+    {
+      "name": "Faltu",
+      "project": "ABC Company",
+      "taskDetails": "PTO",
+      "taskGiven": 10,
+      "taskCompleted": 5,
+      "manager": "Alex",
+      "skill": "Java",
+      "id": 100013
+    },
+    {
+      "name": "Faltu2",
+      "project": "ABC Company",
+      "taskDetails": "PTO",
+      "taskGiven": 11,
+      "taskCompleted": 6,
+      "manager": "Alex",
+      "skill": "Java",
+      "id": 100014
+    },
+    {
+      "name": "hubdcugd",
+      "project": "ABC Company",
+      "taskDetails": "yfyisbvul",
+      "taskGiven": 8,
+      "taskCompleted": 4,
+      "manager": "dgyv",
+      "skill": "uhsbvj",
+      "id": 100015
+    }
+  ]
+}

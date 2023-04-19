@@ -16,6 +16,7 @@ import { DummyformComponent } from './dummyform/dummyform.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeedetailService } from './service/employeedetail.service';
 import {HttpClientModule} from '@angular/common/http';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     DummyformComponent,
     EmployeeComponent,
+    PopupComponent,
     
   ],
   imports: [

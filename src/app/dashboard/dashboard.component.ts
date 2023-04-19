@@ -69,9 +69,19 @@ export class DashboardComponent implements OnInit{
           }
           else if(second==this.userdata[i].project)
           {
+            // console.log(" name P2: "+this.userdata[i].name)
+            // console.log("Task Given P2: "+this.userdata[i].taskGiven) 
+            // if (typeof this.userdata[i].taskGiven === 'number')
+            // {console.log("type of : numnber ")}
+            // if (typeof this.userdata[i].taskGiven === 'string')
+            // {console.log('type of : string')}
+
+  
              this.MultidataP2.push([this.userdata[i].name,prog]);
              this.TotalTaskP2 = this.TotalTaskP2 + this.userdata[i].taskGiven;
-            this.TotalProgressP2 = this.TotalProgressP2 + this.userdata[i].taskCompleted;
+             this.TotalProgressP2 = this.TotalProgressP2 + this.userdata[i].taskCompleted;
+             console.log("Total Task  P2: "+this.TotalTaskP2)
+
           
           }
           else
@@ -83,6 +93,10 @@ export class DashboardComponent implements OnInit{
           console.log()
           
         }
+        console.log("this.TTP2 "+this.TotalTaskP2)
+
+        console.log("thisTPP2 "+this.TotalProgressP2)
+
         this.projectName = [ ... new Set(this.projectName)]
 
        this.RenderChart(this.labeldata,this.taskProgress,this.colordata);
@@ -104,13 +118,20 @@ export class DashboardComponent implements OnInit{
        this.RenderPieChart1((this.TotalProgressP1/this.TotalTaskP1)*100,
        ((this.TotalTaskP1-this.TotalProgressP1)/this.TotalTaskP1)*100,
        this.colordata,this.projectName[0]);
-       // Pie Chart  1
+       // Pie Chart  2
+
+       console.log("TP: "+ this.TotalProgressP2)
+       console.log("TR: "+this.TotalTaskP2)
+
+       console.log("TP: "+(this.TotalProgressP2/this.TotalTaskP2)*100)
+       console.log("TR: "+((this.TotalTaskP2-this.TotalProgressP2)/this.TotalTaskP2)*100)
+
        this.RenderPieChart2((this.TotalProgressP2/this.TotalTaskP2)*100,
-       ((this.TotalTaskP1-this.TotalProgressP2)/this.TotalTaskP2)*100,
+       ((this.TotalTaskP2-this.TotalProgressP2)/this.TotalTaskP2)*100,
        this.colordata,this.projectName[1]);
        
        //console log 
-       console.log(this.labeldata);
+       console.log(this.TotalProgressP1);
        console.log(this.taskProgress);
        console.log(this.colordata);
        console.log(this.projectName);
@@ -232,6 +253,7 @@ export class DashboardComponent implements OnInit{
     });
   }
   RenderPieChart2(TotalProgressP2:any,TotalTaskP2:any,colordata:any,projectName:any) {
+    console.log("TotalTaskP2"+TotalTaskP2)
     const myChart = new Chart('piechart2', {
       type: 'doughnut',
       data: {
