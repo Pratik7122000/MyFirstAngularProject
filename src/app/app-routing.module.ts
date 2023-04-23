@@ -4,13 +4,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { DummyformComponent } from './dummyform/dummyform.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './services/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'employee', component: EmployeeComponent },
-  { path: 'form', component: DummyformComponent }
+  
+  { component:HomeComponent,path:'',canActivate:[AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate:[AuthGuard] },
+  { path: 'employee', component: EmployeeComponent, canActivate:[AuthGuard] },
+  { path: 'login', component:LoginComponent },
+  {path:'register',component:RegisterComponent},
 
 ];
 

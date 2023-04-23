@@ -41,11 +41,26 @@
         <input matInput placeholder="Alex" formControlName="manager" >
       </mat-form-field>
 
-  
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+            <mat-option value=''>Select Role</mat-option>
+            <mat-option *ngFor="let item of rolelist" [value]="item.code">
+                {{item.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Skills</mat-label>
       <textarea matInput placeholder="Java" formControlName="skill"></textarea>
     </mat-form-field>
+
+    <section class="example-section">
+      <br>
+      <mat-checkbox  formControlName="isactive" class="example-margin">Is Active</mat-checkbox>
+  </section>
+    
 
    
 </mat-card-content>

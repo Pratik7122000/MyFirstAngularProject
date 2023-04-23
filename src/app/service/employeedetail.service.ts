@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject  } from 'rxjs';
 import { EmployeeInterface } from '../interfaces/employee';
+import { DYNAMIC_TYPE } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,11 @@ export class EmployeedetailService {
   }
 
   GetEmployeebycode(id: any): Observable<EmployeeInterface[]> {
-    return this.http.get<EmployeeInterface[]>(this.url+'/'+id);
+    let value = this.http.get<EmployeeInterface[]>(this.url+'/'+id);
+    console.log("value: "+value)
+    return value
+
+//    return this.http.get<EmployeeInterface[]>(this.url+'/'+id);
   }
 
   RemoveEmployeebycode(id: any) {
@@ -38,6 +43,21 @@ export class EmployeedetailService {
   UpdateEmployee(id: any, employeedata: any) {
     return this.http.put(this.url+'/'+id, employeedata);
   }
+
+  IsLoggedIn(){
+    return sessionStorage.getItem('id')!=null;
+  }
+  GetRole(){
+    return sessionStorage.getItem('role')!=null?sessionStorage.getItem('role')?.toString():'';
+  }
+  GetUserRole(){
+    return this.http.get('http://localhost:3000/role');
+  }
+
+  Getaccessbyrole(role:any,menu:any){
+    return this.http.get('http://localhost:3000/roleaccess?role='+role+'&menu='+menu)
+  }
+
 }
 
 // addPerson(person:Person): Observable<any> {

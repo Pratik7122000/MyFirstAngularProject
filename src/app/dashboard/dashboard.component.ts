@@ -1,4 +1,4 @@
-import {OnInit, AfterViewInit , Component, ViewChild} from '@angular/core';
+import { OnInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js'
 import { EmployeedetailService } from '../service/employeedetail.service';
 import { EmployeeInterface } from '../interfaces/employee';
@@ -10,9 +10,9 @@ Chart.register(...registerables);
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit{
+export class DashboardComponent implements OnInit {
   constructor(private service: EmployeedetailService) { }
- // dataSource:any;
+  // dataSource:any;
   userdata!: EmployeeInterface[];
   labeldata: any[] = [];
   labeldataP1: any[] = [];
@@ -23,14 +23,14 @@ export class DashboardComponent implements OnInit{
   taskProgress1: any[] = [];
   taskProgress2: any[] = [];
   colordata: any[] = [];
-  projectName: any[]=[];
-  projectEntries =new Set();
-  MultidataP1: any[][]=[];
+  projectName: any[] = [];
+  projectEntries = new Set();
+  MultidataP1: any[][] = [];
   TotalProgressP1: number = 0;
   TotalProgressP2: number = 0;
   TotalTaskP1: number = 0;
   TotalTaskP2: number = 0;
-  MultidataP2: any[][]=[];
+  MultidataP2: any[][] = [];
 
 
   ngOnInit(): void {
@@ -38,37 +38,35 @@ export class DashboardComponent implements OnInit{
   }
 
   Getallemployee() {
-    this.service.GetallEmployee().subscribe((data : EmployeeInterface[]) => {
+    this.service.GetallEmployee().subscribe((data: EmployeeInterface[]) => {
       console.log(data);
       this.userdata = data;
       console.log(this.userdata);
 
-      if(this.userdata!=null){
-        for(let i=0; i<this.userdata.length ;i++){
-          
+      if (this.userdata != null) {
+        for (let i = 0; i < this.userdata.length; i++) {
+
           //console.log(this.chartdata[i]);
-          
+
           this.labeldata.push(this.userdata[i].name);
           this.taskGiven.push(this.userdata[i].taskGiven);
           this.taskCompleted.push(this.userdata[i].taskCompleted);
           this.projectName.push(this.userdata[i].project);
 
-          const prog=(this.userdata[i].taskCompleted/this.userdata[i].taskGiven)*100;
+          const prog = (this.userdata[i].taskCompleted / this.userdata[i].taskGiven) * 100;
           this.taskProgress.push(prog);
-          
+
           this.projectEntries.add(this.userdata[i].project);
           //  [ ... new Set(this.projectName)]
           const [first] = this.projectEntries;
-          const [,second] = this.projectEntries;
+          const [, second] = this.projectEntries;
 
-          if(first==this.userdata[i].project)
-          {
-            this.MultidataP1.push([this.userdata[i].name,prog]);
+          if (first == this.userdata[i].project) {
+            this.MultidataP1.push([this.userdata[i].name, prog]);
             this.TotalTaskP1 = this.TotalTaskP1 + this.userdata[i].taskGiven;
             this.TotalProgressP1 = this.TotalProgressP1 + this.userdata[i].taskCompleted;
           }
-          else if(second==this.userdata[i].project)
-          {
+          else if (second == this.userdata[i].project) {
             // console.log(" name P2: "+this.userdata[i].name)
             // console.log("Task Given P2: "+this.userdata[i].taskGiven) 
             // if (typeof this.userdata[i].taskGiven === 'number')
@@ -76,82 +74,79 @@ export class DashboardComponent implements OnInit{
             // if (typeof this.userdata[i].taskGiven === 'string')
             // {console.log('type of : string')}
 
-  
-             this.MultidataP2.push([this.userdata[i].name,prog]);
-             this.TotalTaskP2 = this.TotalTaskP2 + this.userdata[i].taskGiven;
-             this.TotalProgressP2 = this.TotalProgressP2 + this.userdata[i].taskCompleted;
-             console.log("Total Task  P2: "+this.TotalTaskP2)
 
-          
+            this.MultidataP2.push([this.userdata[i].name, prog]);
+            this.TotalTaskP2 = this.TotalTaskP2 + this.userdata[i].taskGiven;
+            this.TotalProgressP2 = this.TotalProgressP2 + this.userdata[i].taskCompleted;
+            console.log("Total Task  P2: " + this.TotalTaskP2)
+
+
           }
-          else
-          {
-            console.log("New Project Detected: "+this.projectName)
+          else {
+            console.log("New Project Detected: " + this.projectName)
           }
-          const color= this.getRandomColor();
+          const color = this.getRandomColor();
           this.colordata.push(color);
           console.log()
-          
+
         }
-        console.log("this.TTP2 "+this.TotalTaskP2)
+        console.log("this.TTP2 " + this.TotalTaskP2)
 
-        console.log("thisTPP2 "+this.TotalProgressP2)
+        console.log("thisTPP2 " + this.TotalProgressP2)
 
-        this.projectName = [ ... new Set(this.projectName)]
+        this.projectName = [... new Set(this.projectName)]
 
-       this.RenderChart(this.labeldata,this.taskProgress,this.colordata);
+        this.RenderChart(this.labeldata, this.taskProgress, this.colordata);
         // Company 1,segregation from 2d to 1d
-       for(let i=0; i<this.MultidataP1.length ;i++)
-       {
-        this.labeldataP1.push(this.MultidataP1[i][0])
-        this.taskProgress1.push(this.MultidataP1[i][1])
-       }
-       // Company 2, segregation from 2d to 1d
-       for(let i=0; i<this.MultidataP2.length ;i++)
-       {
-        this.labeldataP2.push(this.MultidataP2[i][0])
-        this.taskProgress2.push(this.MultidataP2[i][1])
-       }
-       this.RenderChart2(this.labeldataP1,this.taskProgress1,this.colordata,this.projectName[0]);
-       this.RenderChart3(this.labeldataP2,this.taskProgress2,this.colordata,this.projectName[1]);
-       // Pie Chart  1
-       this.RenderPieChart1((this.TotalProgressP1/this.TotalTaskP1)*100,
-       ((this.TotalTaskP1-this.TotalProgressP1)/this.TotalTaskP1)*100,
-       this.colordata,this.projectName[0]);
-       // Pie Chart  2
+        for (let i = 0; i < this.MultidataP1.length; i++) {
+          this.labeldataP1.push(this.MultidataP1[i][0])
+          this.taskProgress1.push(this.MultidataP1[i][1])
+        }
+        // Company 2, segregation from 2d to 1d
+        for (let i = 0; i < this.MultidataP2.length; i++) {
+          this.labeldataP2.push(this.MultidataP2[i][0])
+          this.taskProgress2.push(this.MultidataP2[i][1])
+        }
+        this.RenderChart2(this.labeldataP1, this.taskProgress1, this.colordata, this.projectName[0]);
+        this.RenderChart3(this.labeldataP2, this.taskProgress2, this.colordata, this.projectName[1]);
+        // Pie Chart  1
+        this.RenderPieChart1((this.TotalProgressP1 / this.TotalTaskP1) * 100,
+          ((this.TotalTaskP1 - this.TotalProgressP1) / this.TotalTaskP1) * 100,
+          this.colordata, this.projectName[0]);
+        // Pie Chart  2
 
-       console.log("TP: "+ this.TotalProgressP2)
-       console.log("TR: "+this.TotalTaskP2)
+        console.log("TP: " + this.TotalProgressP2)
+        console.log("TR: " + this.TotalTaskP2)
 
-       console.log("TP: "+(this.TotalProgressP2/this.TotalTaskP2)*100)
-       console.log("TR: "+((this.TotalTaskP2-this.TotalProgressP2)/this.TotalTaskP2)*100)
+        console.log("TP: " + (this.TotalProgressP2 / this.TotalTaskP2) * 100)
+        console.log("TR: " + ((this.TotalTaskP2 - this.TotalProgressP2) / this.TotalTaskP2) * 100)
 
-       this.RenderPieChart2((this.TotalProgressP2/this.TotalTaskP2)*100,
-       ((this.TotalTaskP2-this.TotalProgressP2)/this.TotalTaskP2)*100,
-       this.colordata,this.projectName[1]);
-       
-       //console log 
-       console.log(this.TotalProgressP1);
-       console.log(this.taskProgress);
-       console.log(this.colordata);
-       console.log(this.projectName);
-       console.log(this.projectEntries);
-       console.log(this.MultidataP1[0][0]);
-       console.log(this.MultidataP1[0][1]);
-       
-       console.table(this.labeldataP1)
+        this.RenderPieChart2((this.TotalProgressP2 / this.TotalTaskP2) * 100,
+          ((this.TotalTaskP2 - this.TotalProgressP2) / this.TotalTaskP2) * 100,
+          this.colordata, this.projectName[1]);
+
+        //console log 
+        console.log(this.TotalProgressP1);
+        console.log(this.taskProgress);
+        console.log(this.colordata);
+        console.log(this.projectName);
+        console.log(this.projectEntries);
+        console.log(this.MultidataP1[0][0]);
+        console.log(this.MultidataP1[0][1]);
+
+        console.table(this.labeldataP1)
 
       }
-      
+
     });
   }
   getRandomColor() {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + color).slice(-6);
-    }
+  }
 
-  RenderChart(labeldata:any,taskProgress:any,colordata:any) {
-    
+  RenderChart(labeldata: any, taskProgress: any, colordata: any) {
+
     const myChart = new Chart('barchart', {
       type: 'bar',
       data: {
@@ -176,8 +171,8 @@ export class DashboardComponent implements OnInit{
     });
 
   }
-  RenderChart2(labeldata:any,taskProgress:any,colordata:any,projectName:any) {
-    
+  RenderChart2(labeldata: any, taskProgress: any, colordata: any, projectName: any) {
+
     const myChart = new Chart('barchart2', {
       type: 'bar',
       data: {
@@ -203,7 +198,7 @@ export class DashboardComponent implements OnInit{
 
   }
 
-  RenderChart3(labeldata:any,taskProgress:any,colordata:any,projectName:any) {
+  RenderChart3(labeldata: any, taskProgress: any, colordata: any, projectName: any) {
     const myChart = new Chart('barchart3', {
       type: 'bar',
       data: {
@@ -229,7 +224,7 @@ export class DashboardComponent implements OnInit{
 
   }
 
-  RenderPieChart1(TotalProgressP1:any,TotalTaskP1:any,colordata:any,projectName:any) {
+  RenderPieChart1(TotalProgressP1: any, TotalTaskP1: any, colordata: any, projectName: any) {
     const myChart = new Chart('piechart1', {
       type: 'doughnut',
       data: {
@@ -252,8 +247,8 @@ export class DashboardComponent implements OnInit{
       }
     });
   }
-  RenderPieChart2(TotalProgressP2:any,TotalTaskP2:any,colordata:any,projectName:any) {
-    console.log("TotalTaskP2"+TotalTaskP2)
+  RenderPieChart2(TotalProgressP2: any, TotalTaskP2: any, colordata: any, projectName: any) {
+    console.log("TotalTaskP2" + TotalTaskP2)
     const myChart = new Chart('piechart2', {
       type: 'doughnut',
       data: {
@@ -276,7 +271,7 @@ export class DashboardComponent implements OnInit{
       }
     });
   }
-  }
+}
 
 
 

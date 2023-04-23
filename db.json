@@ -1,24 +1,43 @@
 {
   "employees": [
     {
-      "name": "Jolly",
-      "id": 100002,
-      "skill": "Angular",
+      "id": 100001,
+      "name": "Alex",
       "project": "Solutions",
-      "taskGiven": 5,
-      "taskCompleted": 2,
       "taskDetails": "testing",
-      "manager": "Alex"
+      "taskGiven": 0,
+      "taskCompleted": 0,
+      "manager": "Alex",
+      "skill": "Angular",
+      "password": "Admin@2023",
+      "role": "admin",
+      "isactive": true
     },
     {
-      "name": "James",
+      "id": 100002,
+      "name": "Jolly",
+      "project": "Solutions",
+      "taskDetails": "testing",
+      "taskGiven": 5,
+      "taskCompleted": 2,
+      "manager": "Alex",
+      "skill": "Angular",
+      "password": "Tech@2023",
+      "role": "tech",
+      "isactive": true
+    },
+    {
       "id": 100003,
-      "skill": "Java, Python",
+      "name": "James",
       "project": "ABC Company",
-      "taskGiven": 10,
-      "taskCompleted": 6,
       "taskDetails": "training",
-      "manager": "Alex"
+      "taskGiven": 10,
+      "taskCompleted": 5,
+      "manager": "Alex",
+      "skill": "Java, Python",
+      "password": "Tech@2023",
+      "role": "quality",
+      "isactive": true
     },
     {
       "name": "Jonas",
@@ -28,17 +47,24 @@
       "taskGiven": 6,
       "taskCompleted": 3,
       "taskDetails": "flowchart",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "jonas@gmail.com",
+      "isactive": false
     },
     {
-      "name": "Jammie",
       "id": 100005,
-      "skill": "Database",
+      "name": "Jammie",
       "project": "Solutions",
-      "taskGiven": 4,
-      "taskCompleted": 2,
       "taskDetails": "visuals",
-      "manager": "Alex"
+      "taskGiven": 4,
+      "taskCompleted": 3,
+      "manager": "Alex",
+      "skill": "Database",
+      "password": "Tech@2023",
+      "role": "tech",
+      "isactive": false
     },
     {
       "id": 100006,
@@ -48,7 +74,11 @@
       "taskGiven": 10,
       "taskCompleted": 2,
       "manager": "Alex",
-      "skill": "React"
+      "skill": "React",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "jasmine@gmail.com",
+      "isactive": false
     },
     {
       "name": "Jarred",
@@ -58,7 +88,11 @@
       "taskGiven": 4,
       "taskCompleted": 2,
       "taskDetails": "testing",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "jarred@gmail.com",
+      "isactive": false
     },
     {
       "name": "Jacob",
@@ -68,7 +102,11 @@
       "taskGiven": 4,
       "taskCompleted": 4,
       "taskDetails": "debugging",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "jacob@gmail.com",
+      "isactive": false
     },
     {
       "name": "Jane",
@@ -78,7 +116,11 @@
       "taskGiven": 4,
       "taskCompleted": 1,
       "taskDetails": "debugging",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "jane@gmail.com",
+      "isactive": false
     },
     {
       "name": "Julia",
@@ -88,7 +130,11 @@
       "taskGiven": 4,
       "taskCompleted": 2,
       "taskDetails": "logs",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "julia@gmail.com",
+      "isactive": false
     },
     {
       "name": "Donald",
@@ -98,7 +144,11 @@
       "taskGiven": 6,
       "taskCompleted": 2,
       "taskDetails": "development",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "donald@gmail.com",
+      "isactive": false
     },
     {
       "name": "Peter",
@@ -108,37 +158,99 @@
       "taskGiven": 4,
       "taskCompleted": 2,
       "taskDetails": "debugging",
-      "manager": "Alex"
+      "manager": "Alex",
+      "password": "Tech@2023",
+      "role": "tech",
+      "email": "peter@gmail.com",
+      "isactive": false
     },
     {
-      "name": "Faltu",
-      "project": "ABC Company",
-      "taskDetails": "PTO",
-      "taskGiven": 10,
-      "taskCompleted": 5,
+      "id": 100013,
+      "name": "james",
+      "project": "Solutions",
+      "taskDetails": "Noneghfhj",
+      "taskGiven": 0,
+      "taskCompleted": 0,
       "manager": "Alex",
       "skill": "Java",
-      "id": 100013
+      "password": "Tech@2023",
+      "role": "tech",
+      "isactive": false
     },
     {
-      "name": "Faltu2",
-      "project": "ABC Company",
-      "taskDetails": "PTO",
-      "taskGiven": 11,
-      "taskCompleted": 6,
+      "id": 100014,
+      "name": "uhsbfgjh",
+      "project": "Solutions",
+      "taskDetails": "None",
+      "taskGiven": 0,
+      "taskCompleted": 0,
       "manager": "Alex",
       "skill": "Java",
-      "id": 100014
+      "password": "Pratik@2023",
+      "role": "tech",
+      "isactive": true
     },
     {
-      "name": "hubdcugd",
-      "project": "ABC Company",
-      "taskDetails": "yfyisbvul",
-      "taskGiven": 8,
-      "taskCompleted": 4,
-      "manager": "dgyv",
-      "skill": "uhsbvj",
-      "id": 100015
+      "id": 100015,
+      "name": "Raju",
+      "project": "Solutions",
+      "taskDetails": "None",
+      "taskGiven": 6,
+      "taskCompleted": 2,
+      "manager": "Alex",
+      "skill": "Java, angular, database\n",
+      "password": "Raju@2023",
+      "role": "tech",
+      "isactive": true
+    },
+    {
+      "name": "arhdfdthj",
+      "project": "Solutions",
+      "taskDetails": "htfdjyfikj",
+      "taskGiven": 0,
+      "taskCompleted": 0,
+      "manager": "Alex",
+      "skill": "Java",
+      "password": "Tech@2023",
+      "role": "tech",
+      "isactive": true,
+      "id": 100016
+    },
+    {
+      "name": "100001",
+      "project": "Solutions",
+      "taskDetails": "None",
+      "taskGiven": 0,
+      "taskCompleted": 0,
+      "manager": "Alex",
+      "skill": "Java",
+      "password": "Admin@2023",
+      "role": "",
+      "isactive": false,
+      "id": 100017
+    },
+    {
+      "id": 100018,
+      "name": "aqsw",
+      "project": "Solutions",
+      "taskDetails": "None",
+      "taskGiven": 0,
+      "taskCompleted": 0,
+      "manager": "Alex",
+      "skill": "Java",
+      "password": "Aqsw@1234",
+      "role": "quality",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "tech",
+      "name": "tech"
+    },
+    {
+      "code": "quality",
+      "name": "Quality"
     }
   ]
 }

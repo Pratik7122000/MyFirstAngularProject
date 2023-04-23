@@ -1,11 +1,98 @@
 <div class="container-fluid page">
     <div class="d-flex page__box p-3 mt-2">Home</div>
     <div class="page__content shadow p-3 position-relative">
-      <div class="page__content-data position-absolute text-center">
-        Home Content Goes Here
-       
-          <h2>Individual Progress</h2>
-          <canvas id="barchart"></canvas>
+      <div class="page__content-data ">
+        
+        <div *ngIf="this.employeedata.role!='admin'" class="row">
+          <div class="col-md-2">
+            <h4 class="heads">EMployee ID</h4>
+            <p class="userdetails"> {{this.employeedata.id}}</p>
+          </div>
+          <div class="col-md-2">
+            <h4 class="heads">Name</h4>
+            <p class="userdetails"> {{this.employeedata.name}}</p>
+          </div>
+          <div class="col-md-2">
+            <h4 class="heads">Project</h4>
+            <p class="userdetails"> {{this.employeedata.project}}</p>
+          </div>
+          <div class="col-md-2">
+            <h4 class="heads">Task Given</h4>
+            <p class="userdetails"> {{this.employeedata.taskGiven}}</p>
+          </div>
+          <div class="col-md-2">
+            <h4 class="heads">Task Completed</h4>
+            <p class="userdetails"> {{this.employeedata.taskCompleted}}</p>
+          </div>
+          <div class="col-md-2">
+            <h4 class="heads">Manager</h4>
+            <p class="userdetails"> {{this.employeedata.manager}}</p>
+          </div>
+          <div class="col-md-3">
+            <h4 class="heads">Skills</h4>
+            <p class="userdetails"> {{this.employeedata.skill}}</p>
+          </div>
+          
+          <div>
+                  <a mat-raised-button (click)="EditEmployee()" color="primary"><mat-icon>edit</mat-icon>Edit</a> 
+                  </div>
+              
+  
+         </div>
+
+
+        <div class="info-table" style="background-image:url('../MEDIA/tableback.jpg');background-attachment: fixed;">
+          <div class="container table-layer">
+            <div class="row heading-one">
+              <h3>DEPTH OF EXPERTISE</h3>
+              <p>____________________________________</p>
+            </div>
+            <div class="row heading-second">
+              <h1>Services</h1>
+            </div>
+            <div class="table-holder">
+              <div class="row first-row">
+                <div class="col-md-3 side-left">
+                  <a href="#"> <p>Cloud Enablement</p></a>
+                </div>
+                <div class="col-md-9 side-right">
+                  <a href="#"> 
+                    <p>
+                    Intelligent Cloud mobilizes your organization 
+                    with a next-generation cloud operating<br> model that 
+                    helps increase velocity and control.
+                  </p></a>
+                </div>              
+              </div>
+              <div class="row second-row">
+                <div class="col-md-3 side-left">
+                  <a href="#"> <p>Application Services & Modernization</p></a>
+                </div>
+                <div class="col-md-9 side-right">
+                  <a href="#"> 
+                    <p>
+                      Our application modernization services help you achieve agility for an increasingly
+                      <br> digital world. Integrate a combination of accelerators, platforms and strategic
+                     <br> partners to modernize core business applications.
+                  </p></a>
+                </div>
+              </div>
+              <div class="row third-row">
+                <div class="col-md-3 side-left">
+                  <a href="#"> <p>Data, Analytics & AI</p></a>
+                </div>
+                <div class="col-md-9 side-right">
+                  <a href="#"> 
+                    <p>
+                      Integrate the enterprise and accelerate value through advanced data management
+                      <br> strategies and solutions.
+                  </p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
        
       </div>
     </div>
