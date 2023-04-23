@@ -23,4 +23,95 @@
         transform: translate(-50%, -50%);
       } */
     
-  
+.page__content .page__content-data .heads{
+    color:#190684;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+.page__content .page__content-data .userdetails{
+    color:#1740b0;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+      .info-table{
+        background-size:cover;
+        /*height: 100vh;*/
+        /*position: relative;*/
+    }
+    .info-table .table-layer{
+        /*position: absolute;*/
+        top:5%;
+        bottom: 6%;
+        padding-bottom: 6%;
+        padding-top: 6%;
+       /* max-height: 10vh;*/
+       
+        
+    }
+    
+    .info-table .table-layer .heading-one h3{
+        color: #1740b0;
+        font-size: 1.5em;
+    }
+    .info-table .table-layer .heading-one p{
+        color: #1740b0;
+        font-size: 1em;
+    }
+    
+    .info-table .table-layer .heading-second{
+        margin-top: 1%;
+    }
+    .info-table .table-layer .heading-second h1{
+        color: #1740b0;
+        font-size: 3.65em;
+    }
+    
+    .info-table .table-layer .table-holder{
+        margin-top: 4em;
+    }
+    .info-table .table-layer .table-holder .first-row{
+        background-color: #0d024f;
+    }
+    .info-table .table-layer .table-holder .second-row{
+        background-color: #190684;
+    }
+    .info-table .table-layer .table-holder .third-row{
+        background-color: #0c4498;
+    }
+    
+    
+    .info-table .table-layer .table-holder .first-row .side-left a,
+    .info-table .table-layer .table-holder .second-row .side-left a,
+    .info-table .table-layer .table-holder .third-row .side-left a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 2.65rem;
+    
+    }
+    .info-table .table-layer .table-holder .first-row .side-left p,
+    .info-table .table-layer .table-holder .second-row .side-left p,
+    .info-table .table-layer .table-holder .third-row .side-left p{
+    
+       padding-left: 2em;
+       margin-top: 1.5em;
+    }
+    
+    
+    .info-table .table-layer .table-holder .first-row .side-right a,
+    .info-table .table-layer .table-holder .second-row .side-right a,
+    .info-table .table-layer .table-holder .third-row .side-right a{
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.75rem;
+       
+    
+    }
+    .info-table .table-layer .table-holder .first-row .side-right p,
+    .info-table .table-layer .table-holder .second-row .side-right p,
+    .info-table .table-layer .table-holder .third-row .side-right p{
+        padding: 2em;
+        padding-left:8em ;
+    }

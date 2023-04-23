@@ -9,5 +9,9 @@ export interface EmployeeInterface {
   taskGiven:number;
   taskCompleted:number;
   taskDetails:string;
+  password:string;
+  role:string;
+  email:string;
+  isactive:boolean
 
 }

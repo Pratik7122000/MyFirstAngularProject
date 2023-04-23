@@ -17,6 +17,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeedetailService } from './service/employeedetail.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PopupComponent } from './popup/popup.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { PopupComponent } from './popup/popup.component';
     DummyformComponent,
     EmployeeComponent,
     PopupComponent,
+    LoginComponent,
+    RegisterComponent,
     
   ],
   imports: [

@@ -1,172 +1,98 @@
 <!-- <p>employee works!</p> -->
 
 <div class="container-fluid page">
-    <div class="d-flex page__box p-3 mt-2">Employees</div>
-    <div class="page__content shadow p-3 position-relative">
-      <div>
-     
-          <div class="mat-elevation-z8">
-          <!-- <table mat-table [dataSource]="dataSource" >
-            <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
-              <th mat-header-cell *matHeaderCellDef>
-                {{column.header}}
-              </th>
-              <td mat-cell *matCellDef="let row">
-                {{column.cell(row)}}
-              </td>
-            </ng-container>
-          
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          <mat-paginator [pageSizeOptions]="[5, 10]"
-          showFirstLastButtons
-          aria-label="Select page of periodic elements">
-                </mat-paginator> -->
+  <div class="d-flex page__box p-3 mt-2">Employees</div>
+  <div class="page__content shadow p-3 position-relative">
+    <div>
 
-               
-                <!-- <mat-form-field>
-                  <mat-label>
-                    <mat-icon>search</mat-icon>
-                    Search by Employee ID, Name, Project, Manager</mat-label>
-                  <input matInput placeholder="Examplem: Jolly or 123456" (keyup)="Filterchange($event)">
-            
-                </mat-form-field> -->
-                
-                <!-- <table mat-table matSort [dataSource]="dataSource">
-                
-                 
-                  <ng-container matColumnDef="empID">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Employee ID. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.empID}} </td>
-                  </ng-container>
-                
-                 
-                  <ng-container matColumnDef="name">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                  </ng-container>
-                
-                  
-                  <ng-container matColumnDef="project">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Project </th>
-                    <td mat-cell *matCellDef="let element"> {{element.project}} </td>
-                  </ng-container>
+      <div class="mat-elevation-z8">
 
-                  <ng-container matColumnDef="taskDetails">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Details </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskDetails}} </td>
-                  </ng-container>
-                
-                  <ng-container matColumnDef="taskGiven">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Given </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskGiven}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="taskCompleted">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Completed </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskCompleted}} </td>
-                  </ng-container>
-                 
-                  <ng-container matColumnDef="manager">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Manager </th>
-                    <td mat-cell *matCellDef="let element"> {{element.manager}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="skill">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Skill </th>
-                    <td mat-cell *matCellDef="let element"> {{element.skill}} </td>
-                  </ng-container>
-                
-                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                
-                 
-                   <tr class="mat-row" *matNoDataRow>
-                    <td class="mat-cell" colspan="4">No data matching the filter </td>
-                  </tr> 
-                </table> -->
-                <div>
-                  <a mat-raised-button color="primary" (click)="Openpopup('')" style="margin: 2%">
-                    <mat-icon>add_circle_outline</mat-icon>Create New</a>
-              </div>
-
-<mat-form-field>
-                  <mat-label>
-                    <mat-icon>search</mat-icon>
-                    Search by Employee ID, Name, Project, Manager</mat-label>
-                  <input matInput placeholder="Examplem: Jolly or 123456" (keyup)="Filterchange($event)">
-            
-                </mat-form-field>
-                <table mat-table matSort [dataSource]="datasource">
-
-                  <ng-container matColumnDef="id">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Employee ID. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                  </ng-container>
-                
-                 
-                  <ng-container matColumnDef="name">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
-                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                  </ng-container>
-                
-                  
-                  <ng-container matColumnDef="project">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Project </th>
-                    <td mat-cell *matCellDef="let element"> {{element.project}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="taskDetails">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Details </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskDetails}} </td>
-                  </ng-container>
-                
-                  <ng-container matColumnDef="taskGiven">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Given </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskGiven}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="taskCompleted">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Completed </th>
-                    <td mat-cell *matCellDef="let element"> {{element.taskCompleted}} </td>
-                  </ng-container>
-                 
-                  <ng-container matColumnDef="manager">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Manager </th>
-                    <td mat-cell *matCellDef="let element"> {{element.manager}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="skill">
-                    <th mat-header-cell mat-sort-header *matHeaderCellDef> Skill </th>
-                    <td mat-cell *matCellDef="let element"> {{element.skill}} </td>
-                  </ng-container>
-
-                  <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef> Action</th>
-                    <td mat-cell *matCellDef="let element">
-                        <div>
-                            <a mat-raised-button (click)="EditEmployee(element.id)" color="primary"><mat-icon>edit</mat-icon></a> |
-                            <a mat-raised-button (click)="RemoveEmployee(element.id)" color="accent"><mat-icon>delete</mat-icon></a>
-                        </div>
-                    </td>
-                  </ng-container>
-
-                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-                  <tr class="mat-row" *matNoDataRow>
-                    <td class="mat-cell" colspan="4">No data matching the filter </td>
-                  </tr> 
-
-                </table>
-
-                <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
-
-                </mat-paginator>
-
+        <div>
+          <a mat-raised-button color="primary" (click)="Openpopup('')" style="margin: 2%">
+            <mat-icon>add_circle_outline</mat-icon>Create New</a>
         </div>
 
+        <mat-form-field>
+          <mat-label>
+            <mat-icon>search</mat-icon>
+            Search by Employee ID, Name, Project, Manager</mat-label>
+          <input matInput placeholder="Examplem: Jolly or 123456" (keyup)="Filterchange($event)">
+
+        </mat-form-field>
+        <table mat-table matSort [dataSource]="datasource">
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Employee ID. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="project">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Project </th>
+            <td mat-cell *matCellDef="let element"> {{element.project}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="taskDetails">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Details </th>
+            <td mat-cell *matCellDef="let element"> {{element.taskDetails}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="taskGiven">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Given </th>
+            <td mat-cell *matCellDef="let element"> {{element.taskGiven}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="taskCompleted">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Task Completed </th>
+            <td mat-cell *matCellDef="let element"> {{element.taskCompleted}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="manager">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Manager </th>
+            <td mat-cell *matCellDef="let element"> {{element.manager}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="role">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef> Role </th>
+            <td mat-cell *matCellDef="let element"> {{element.role ===''? 'Un Assigned':element.role}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.isactive ? 'Active':'In Active'}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action</th>
+            <td mat-cell *matCellDef="let element">
+              <div>
+                <a mat-raised-button (click)="EditEmployee(element.id)" color="primary"><mat-icon>edit</mat-icon></a> |
+                <a mat-raised-button (click)="RemoveEmployee(element.id)" color="accent"><mat-icon>delete</mat-icon></a>
+              </div>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter </td>
+          </tr>
+
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+
+        </mat-paginator>
+
       </div>
+
     </div>
   </div>
+</div>
