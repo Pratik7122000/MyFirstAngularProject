@@ -22,19 +22,34 @@
         left: 50%;
         transform: translate(-50%, -50%);
       } */
-    
+      .page__content .page__content-data .user-data-box{
+        background-origin: padding-box;
+        border: #190684;
+        border-style: double;
+        border-radius: 12px;
+        width: 70%;
+        margin-left: 5em;
+        background: #1e293b;
+        padding-bottom: 1em;
+      }
+.page__content .page__content-data .user-data-box .userbox,
+.page__content .page__content-data .user-data-box .button{
+
+    margin-left: 1.5em;
+}
 .page__content .page__content-data .heads{
-    color:#190684;
-    font-size: 1.5rem;
+    color:#a9a8ac;
+    font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
 }
 .page__content .page__content-data .userdetails{
-    color:#1740b0;
+    color:#eceef2;
     font-weight: 400;
     text-align: center;
     font-size: 1.2rem;
 }
+
 
       .info-table{
         background-size:cover;

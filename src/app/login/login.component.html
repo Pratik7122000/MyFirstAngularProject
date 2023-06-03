@@ -1,11 +1,13 @@
 <!-- <p>login works!</p> -->
-
-
+<!-- background image  -->
+<div class="container-fluid back-drop" style="background:url('./assets/back5.jpg');background-attachment: fixed;">
+<div class="container login">
 <mat-card>
     <mat-card-header>
         <h2>Employee Login</h2>
     </mat-card-header>
     <mat-card-content>
+      <!-- login form template -->
         <form class="example-form" [formGroup]="loginform" (ngSubmit)="proceedlogin()">
             <mat-form-field class="example-full-width">
               <mat-label>Employee ID</mat-label>
@@ -13,15 +15,19 @@
             </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>Password</mat-label>
-                <input [ngModel]="data" matInput type="password" formControlName="password" >
+                <input  matInput type="password" formControlName="password" >
               </mat-form-field>
             
               <div>
-                <button  mat-raised-button color="primary">Login</button>
+                <button [ngModel]="data"  mat-raised-button color="primary">Login</button>
+                <!-- link to go to registration page -->
                 <a routerLink="/register" mat-raised-button color="accent">New User?</a>
               </div>
           
           </form>
     </mat-card-content>
   </mat-card>
-  <app-header ></app-header>
+</div>
+<app-home [emplyeeid]="exportdata"></app-home>
+</div>
+ 

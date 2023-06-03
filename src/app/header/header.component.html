@@ -1,47 +1,30 @@
-<!-- <p>header works!</p> -->
-
-<!-- <form >
-    <label for="num1">Num1</label>
-    <input type="number" id="num1">
-
-    <label for="num2">Num2</label>
-    <input type="number" id="num2">
-    <button (click)="onSubmit()">Submit</button>
-    <p class="sum"></p>
-</form> -->
-
 <mat-toolbar>
-    <mat-toolbar-row class="justify-content-between">
-      <button mat-icon-button (click)="toggleSidebar()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <div class="row mr-2 ml-auto">
-        <app-login (event)="receiveName($event)" *ngIf="false"></app-login>
-        <ul class="row m-0 align-items-center">
-          <li>
-            <button
-              mat-button
-              [matMenuTriggerFor]="menu"
-              class="user mt-2 d-flex align-items-center"
-            >
-              <img src="./assets/male.jpg" alt="" class="user-image mr-1 p-2" />
-                        
-              {{name}} 
-              <mat-icon class="user-image-icon ml-1"
-                >keyboard_arrow_down</mat-icon
-              >
-            </button>
-            <mat-menu #menu="matMenu">
-              <button mat-menu-item>
-                <a routerLink="/login">
+  <mat-toolbar-row class="justify-content-between">
+    <!-- button to toggle the side bar -->
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="row mr-2 ml-auto">
+      <app-login (event)="receiveName($event)" *ngIf="false"></app-login>
+      <ul class="row m-0 align-items-center">
+        <li>
+          <!-- palceholder image and getting the user's name via interpolation -->
+          <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
+            <img src="./assets/male.jpg" alt="" class="user-image mr-1 p-2" />
+
+            {{name}}
+            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <a routerLink="/login">
                 <mat-icon>exit_to_app</mat-icon>
                 Logout
               </a>
-              </button>
-            </mat-menu>
-          </li>
-        </ul>
-        
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

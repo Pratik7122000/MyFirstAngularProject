@@ -2,7 +2,7 @@ import { OnInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js'
 import { EmployeedetailService } from '../service/employeedetail.service';
 import { EmployeeInterface } from '../interfaces/employee';
-import { first } from 'rxjs';
+//import { first } from 'rxjs';
 Chart.register(...registerables);
 
 @Component({
@@ -31,8 +31,6 @@ export class DashboardComponent implements OnInit {
   TotalTaskP1: number = 0;
   TotalTaskP2: number = 0;
   MultidataP2: any[][] = [];
-
-
   ngOnInit(): void {
     this.Getallemployee();
   }
@@ -45,9 +43,6 @@ export class DashboardComponent implements OnInit {
 
       if (this.userdata != null) {
         for (let i = 0; i < this.userdata.length; i++) {
-
-          //console.log(this.chartdata[i]);
-
           this.labeldata.push(this.userdata[i].name);
           this.taskGiven.push(this.userdata[i].taskGiven);
           this.taskCompleted.push(this.userdata[i].taskCompleted);
@@ -57,7 +52,6 @@ export class DashboardComponent implements OnInit {
           this.taskProgress.push(prog);
 
           this.projectEntries.add(this.userdata[i].project);
-          //  [ ... new Set(this.projectName)]
           const [first] = this.projectEntries;
           const [, second] = this.projectEntries;
 
@@ -67,20 +61,10 @@ export class DashboardComponent implements OnInit {
             this.TotalProgressP1 = this.TotalProgressP1 + this.userdata[i].taskCompleted;
           }
           else if (second == this.userdata[i].project) {
-            // console.log(" name P2: "+this.userdata[i].name)
-            // console.log("Task Given P2: "+this.userdata[i].taskGiven) 
-            // if (typeof this.userdata[i].taskGiven === 'number')
-            // {console.log("type of : numnber ")}
-            // if (typeof this.userdata[i].taskGiven === 'string')
-            // {console.log('type of : string')}
-
-
             this.MultidataP2.push([this.userdata[i].name, prog]);
             this.TotalTaskP2 = this.TotalTaskP2 + this.userdata[i].taskGiven;
             this.TotalProgressP2 = this.TotalProgressP2 + this.userdata[i].taskCompleted;
             console.log("Total Task  P2: " + this.TotalTaskP2)
-
-
           }
           else {
             console.log("New Project Detected: " + this.projectName)
@@ -124,17 +108,6 @@ export class DashboardComponent implements OnInit {
         this.RenderPieChart2((this.TotalProgressP2 / this.TotalTaskP2) * 100,
           ((this.TotalTaskP2 - this.TotalProgressP2) / this.TotalTaskP2) * 100,
           this.colordata, this.projectName[1]);
-
-        //console log 
-        console.log(this.TotalProgressP1);
-        console.log(this.taskProgress);
-        console.log(this.colordata);
-        console.log(this.projectName);
-        console.log(this.projectEntries);
-        console.log(this.MultidataP1[0][0]);
-        console.log(this.MultidataP1[0][1]);
-
-        console.table(this.labeldataP1)
 
       }
 

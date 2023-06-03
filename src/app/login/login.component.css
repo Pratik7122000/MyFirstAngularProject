@@ -1,3 +1,31 @@
 app-header{
     visibility: hidden;
 }
+error{
+ background-color: green;   
+}
+.back-drop{
+    height: 100%;
+    width: 100%;
+
+}
+.back-drop .login{
+    
+    height: 500px;
+    width: 400px;
+    padding-top: 220px;
+    /* margin-left: 20em; */
+}
+mat-card-content{
+    background-color: #1e293b;
+}
+button{
+    margin-right: 20px;
+}
+mat-form-field{
+   padding: 5%;
+    width: 100%;
+}
+app-home{
+    display: none;
+}

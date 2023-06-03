@@ -1,0 +1,21 @@
+.register{
+    height: 100%;
+    width: 100%;
+
+}
+.register .login{
+    
+    height: 500px;
+    width: 400px;
+    padding-top: 220px;
+}
+mat-card-content{
+    background-color: #1e293b;
+}
+button{
+    margin-right: 20px;
+}
+mat-form-field{
+   padding: 5%;
+    width: 100%;
+}

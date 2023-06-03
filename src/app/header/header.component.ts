@@ -1,4 +1,4 @@
-import { Component, EventEmitter, AfterViewInit, Output,Input, ViewChild, OnInit } from '@angular/core';
+import { Component, EventEmitter, AfterViewInit, Output, Input, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeedetailService } from '../service/employeedetail.service';
 import { LoginComponent } from '../login/login.component';
@@ -12,44 +12,53 @@ import { MatTableDataSource } from '@angular/material/table';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-data:any;
-employeedata:any;
-datasource: any;
-constructor(private router: Router, private route: ActivatedRoute,private api: EmployeedetailService){
+  data: any;
+  employeedata: any;
+  datasource: any;
+  constructor(private router: Router, private route: ActivatedRoute, private api: EmployeedetailService) {
 
-}
-  ngOnInit(): void {
-  this.route.queryParams.subscribe((params:any)=>{
-    console.log("PARAMS "+params.data);
-    this.data=params.data;
-    console.log(this.data);
-  });
-  this.LoadEmployee(this.data);
-  console.log("header ")
   }
- 
+  userdata!: EmployeeInterface;
+  responsevalue!: number;
+  name: any;
+  ngOnInit(): void {
+    //getting data(employee id) from login page
+    this.route.queryParams.subscribe((params: any) => {
+      console.log("PARAMS " + params.data);
+      this.data = params.data;
+      console.log("header data value " + this.data);
+    });
+    this.name = localStorage.getItem('EmpName');
+    // this.LoadEmployee(this.data);
+
+    console.log("header ")
+  }
+
   @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
-username:any;
-receiveName($event: any){
-  this.username=$event;
-}
-name:any;
-LoadEmployee(data:any) {
-
-  this.api.GetEmployeebycode(data).subscribe(response => {
-    this.employeedata = response;
-    this.name=this.employeedata.name;
-    console.log("name "+this.name);
- 
-  });
-
-}
-
-Getid(id:any){
-  this.username=id
-}
+  username: any;
+  receiveName($event: any) {
+    this.username = $event;
+  }
+  //function that gets all the employees and gets the data whose employee id matches the id 
+  //sent from login page
+  LoadEmployee(data: any) {
+    this.api.GetallEmployee().subscribe((response: EmployeeInterface[]) => {
+      for (let i = 0; i < response.length; i++) {
+        if (response[i].id == data) {
+          console.log("responsevalue inside i: " + i)
+          this.responsevalue = i
+        }
+      }
+      console.log("responsevalue: " + this.responsevalue)
+      this.employeedata = response[this.responsevalue];
+      //INterpolation the name variable 
+      this.name = this.employeedata.name;
+    });
+  }
+  Getid(id: any) {
+    this.username = id
+  }
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
   }
- 
 }

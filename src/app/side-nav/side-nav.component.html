@@ -1,25 +1,22 @@
 <!--  <p>side-nav works!</p> -->
 
-  <mat-nav-list>
-    <div class="logo py-4">
-        <h1>LOGO</h1>
-    </div>
-    <mat-divider></mat-divider>
-        <h2 matSubheader class="mt-2">Options</h2>
-
-        <a mat-list-item  routerLinkActive="list-item-active" routerLink="">
-            <mat-icon>home</mat-icon> <span class="choices">Home</span> 
-   
-        </a>
-          <a *ngIf="isadmin" mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
-            <mat-icon>dashboard</mat-icon> <span class="choices">Dashboard</span> 
-          </a>
-          <a *ngIf="isadmin" mat-list-item routerLinkActive="list-item-active" routerLink="/employee"> 
-            <mat-icon>accessibility_new</mat-icon> <span class="choices">Employee</span> </a>
-          <a mat-list-item> <mat-icon>edit</mat-icon> Link 4 </a>
-          <a mat-list-item> <mat-icon>edit</mat-icon> Link 5 </a>
-          <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/form">
-             <mat-icon>edit</mat-icon><span class="choices">Form</span>  </a> -->
+<mat-nav-list>
+  <div class="logo py-4">
+    <a routerLinkActive="list-item-active" routerLink="">
+      <!-- .gif image as logo -->
+      <img src="../../assets/giphy.gif" alt="LOGO" class="logo" height="150px" width="150px"></a>
+  </div>
+  <mat-divider></mat-divider>
+  <h2 matSubheader class="mt-2">Options</h2>
+<!-- Link to goto Home Page -->
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="">
+    <mat-icon>home</mat-icon> <span class="choices">Home</span>
+  </a>
+  <!-- Link to goto Dashboard Page -->
+  <a *ngIf="isadmin" mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon> <span class="choices">Dashboard</span>
+  </a>
+  <!-- Link to goto Employee Page -->
+  <a *ngIf="isadmin" mat-list-item routerLinkActive="list-item-active" routerLink="/employee">
+    <mat-icon>accessibility_new</mat-icon> <span class="choices">Employee</span> </a>
 </mat-nav-list>
-
-

@@ -1,7 +1,3 @@
-// import { Component, } from '@angular/core';
-
-// import {MatTableDataSource} from '@angular/material/table';
-
 
 import { OnInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -19,7 +15,7 @@ import * as alertify from 'alertifyjs'
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
+  //setting up the constructor
   constructor(private dialog: MatDialog, private api: EmployeedetailService) { }
 
   @ViewChild(MatPaginator) paginator !: MatPaginator;
@@ -27,66 +23,60 @@ export class EmployeeComponent implements OnInit {
 
   employeedata!: EmployeeInterface[];
   datasource: any;
-
-  ngOnInit(): void {
-
-    this.LoadEmployee();
-
-  }
-
+  //declaring the column names to be displayed
   displayedColumns: string[] = ['id', 'name', 'project', 'taskDetails', 'taskGiven',
-    'taskCompleted', 'manager', 'role', 'status', 'action']
-
-  Openpopup(id: any) {
-    console.log("emp:")
+    'taskCompleted', 'manager', 'role', 'skill', 'status', 'action']
+  ngOnInit(): void {
+    //calling the functio to load all the employee data
+    this.LoadEmployee();
+  }
+  //opening popup and going to popup component and also sending employee data
+  Openpopup(elementdata: any) {
+    console.log("emp:" + elementdata)
     const _popup = this.dialog.open(PopupComponent, {
-      width: '500px',
+      width: '800px',
       exitAnimationDuration: '800ms',
       enterAnimationDuration: '800ms',
-      data: {
-        id: id
-      }
+      data: elementdata
     })
     _popup.afterClosed().subscribe(r => {
+      console.log("Called after close");
       this.LoadEmployee();
     });
-
   }
-
+  //function declaration to load all the employees 
   LoadEmployee() {
-
-    this.api.GetallEmployee().subscribe(response => {
+    //Calling GetallEmployee service that gets all the employee data from the db
+    this.api.GetallEmployee().subscribe((response: EmployeeInterface[]) => {
       this.employeedata = response;
+      //putting the data in a MatTableDataSource variable inorder to display it in the table
       this.datasource = new MatTableDataSource<EmployeeInterface>(this.employeedata);
+      //declaring paginators and sorting functionalities
       this.datasource.paginator = this.paginator;
       this.datasource.sort = this.sort;
-
     });
-
   }
-
-  EditEmployee(id: any) {
-
-    this.Openpopup(id);
+  //function declaration for editing employee, this calls the Openpopup and passes the employee data
+  EditEmployee(elementdata: any) {
+    console.log("test: " + JSON.stringify(elementdata))
+    this.Openpopup(elementdata);
   }
-
+  //Function declaration to delete a specific employee using employee ID
   RemoveEmployee(id: any) {
     alertify.confirm("Remove Employee", "do you want remove this employee?", () => {
       this.api.RemoveEmployeebycode(id).subscribe(r => {
+        console.log("r.id:" + r.id);
         this.LoadEmployee();
+        alertify.set('notifier', 'position', 'top-center');
         alertify.success("Removed successfully");
       });
     }, function () { })
-
   }
-
+  //Function declaration for filter operation
   Filterchange(event: Event) {
     const filvalue = (event.target as HTMLInputElement).value;
-    //const filvalue = 100001;
     this.datasource.filter = filvalue;
   }
-
-
 }
 
 
