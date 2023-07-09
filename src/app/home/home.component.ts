@@ -1,3 +1,7 @@
+/*
+In the Home component the logged in user will be able to view his/her details along with
+the option to update a few specific details based on the user's role.
+ */
 import { Component, EventEmitter, AfterViewInit, Output, ViewChild, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeedetailService } from '../service/employeedetail.service';
@@ -16,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   @Input() emplyeeid!: any;
   data: any;
+  id:any;
   responsevalue!: number;
   employeedata!: EmployeeInterface;
   datasource: any;
@@ -23,20 +28,16 @@ export class HomeComponent implements OnInit {
   //Defining the constructor
   constructor(private dialog: MatDialog, private router: Router, private route: ActivatedRoute, private api: EmployeedetailService) { }
   ngOnInit(): void {
+    this.emplyeeid = this.route.snapshot.paramMap.get("empid");
     console.log("value from Login: " + this.emplyeeid);
     // Getting the data(employeeid) from the url
-    this.route.queryParams.subscribe((params: any) => {
-      console.log("PARAMS HOME " + params.data);
-      this.data = params.data;
-      console.log(this.data);
-    });
     // Setting the value of employee id in EmpID in local storage
-    localStorage.setItem('EmpId', String(this.data));
-    this.data = localStorage.getItem('EmpId');
+    //localStorage.setItem('EmpId', String(this.emplyeeid));
+    this.emplyeeid = localStorage.getItem('EmpId');
     // localStorage.setItem("EmpName", String(this.sendName))
-    console.log("local storage:" + this.data);
+    console.log("local storage:" + this.emplyeeid);
     //Loading the data for the employee id
-    this.LoadEmployee(this.data);
+    this.LoadEmployee(this.emplyeeid);
   }
   //popup component to edit the data
   Openpopup(employeedata: any) {
@@ -67,11 +68,9 @@ export class HomeComponent implements OnInit {
       }
       console.log("responsevalue: " + this.responsevalue)
       this.employeedata = response[this.responsevalue];
-      const id = this.employeedata.id;
-      const name = this.employeedata.name;
-      //this.sendName=name;
+      this.id = this.employeedata.id;
       const project = this.employeedata.project;
-      console.log("insidew home " + id + ":" + name + ":" + project)
+      console.log("insidew home " + this.id + ":" + this.employeedata.name + ":" + project)
     });
   }
 }

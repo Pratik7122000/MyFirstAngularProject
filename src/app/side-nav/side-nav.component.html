@@ -2,14 +2,14 @@
 
 <mat-nav-list>
   <div class="logo py-4">
-    <a routerLinkActive="list-item-active" routerLink="">
+    <a routerLinkActive="list-item-active" routerLink="/home/{{empid}}">
       <!-- .gif image as logo -->
       <img src="../../assets/giphy.gif" alt="LOGO" class="logo" height="150px" width="150px"></a>
   </div>
   <mat-divider></mat-divider>
   <h2 matSubheader class="mt-2">Options</h2>
-<!-- Link to goto Home Page -->
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="">
+  <!-- Link to goto Home Page -->
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/home/{{empid}}">
     <mat-icon>home</mat-icon> <span class="choices">Home</span>
   </a>
   <!-- Link to goto Dashboard Page -->

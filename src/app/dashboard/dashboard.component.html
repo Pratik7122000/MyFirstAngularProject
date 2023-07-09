@@ -3,31 +3,34 @@
     <div class="d-flex page__box p-3 mt-2">Dashboard</div>
     <div class="page__content shadow p-3 position-relative">
       <div class="page__content-data">
-        
+        <!-- top chart for all employee progress -->
       <div class="row">
-        <div class=" col-lg-7">  
-          <h2>Individual Progress</h2>
-          <canvas id="barchart"  width="500" height="300"></canvas>
+        <div class=" col-lg-8">  
+          <h2 class="heading"> Total Individual Progress</h2>
+          <canvas id="barchart"  width="900" height="600"></canvas>
         </div>
-       
+       <!-- individual and total progress for solutions projects -->
         </div>
-        <div class="row">
-          <div class=" col-lg-5">  
-            <h2>Individual Progress</h2>
+        <div class="row solutions">
+        <h2 class="heading">Solutions</h2>
+          <div class=" col-lg-7">  
+            <h3 class="sub-heading">Individual Progress</h3>
             <canvas id="barchart2"  width="500" height="300"></canvas>
           </div>
           <div class=" col-lg-5">  
-            <h2>Individual Progress</h2>
-            <canvas id="barchart3" width="500" height="300"></canvas>
-          </div>
-        </div>
-        <div class="row">
-          <div class=" col-lg-5">  
-            <h2> Solutions</h2>
+            <h3 class="sub-heading">Total Progress</h3>
             <canvas id="piechart1" width="500" height="300"></canvas>
           </div>
+         <!-- individual and total progress for ABC Company projects -->
+        </div>
+        <div class="row ABC">
+          <h2 class="heading">ABC Company</h2>
+          <div class=" col-lg-7">  
+            <h3 class="sub-heading">Individual Progress</h3>
+            <canvas id="barchart3" width="500" height="300"></canvas>
+          </div>
           <div class=" col-lg-5">  
-            <h2>  ABC Company</h2>
+            <h3 class="sub-heading">Total Progress</h3>
             <canvas id="piechart2" width="500" height="300"></canvas>
           </div>
         </div>

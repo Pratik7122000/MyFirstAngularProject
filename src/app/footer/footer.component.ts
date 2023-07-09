@@ -1,3 +1,6 @@
+/*
+This componets just contains some dummy data
+*/
 import { Component } from '@angular/core';
 
 @Component({

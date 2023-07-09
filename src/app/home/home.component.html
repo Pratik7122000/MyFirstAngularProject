@@ -4,7 +4,7 @@
   <div class="page__content shadow p-3 position-relative">
     <div class="page__content-data ">
       <!-- Content only visible to nn-admin users -->
-      <div *ngIf="this.employeedata.role!='admin'" class="user-data-box">
+      <div  class="user-data-box">
         <div class="button">
           <a mat-raised-button (click)="EditEmployee(employeedata)" color="primary"><mat-icon>edit</mat-icon>Edit</a>
         </div>
@@ -12,11 +12,11 @@
         <div class="row userbox">
           <div class="col-md-6">
             <span class="heads">Employee ID: </span>
-            <span class="userdetails"> {{this.employeedata.id}}</span>
+            <span class="userdetails"> {{id}}</span>
           </div>
           <div class="col-md-6">
             <span class="heads">Name: </span>
-            <span class="userdetails"> {{this.employeedata.name}}</span>
+            <span class="userdetails"> {{employeedata.name}}</span>
           </div>
         </div>
         <div class="row userbox">

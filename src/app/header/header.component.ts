@@ -1,3 +1,7 @@
+/*
+The Header componets contains the slider button that either hides or unhides the side nav
+and also displays the logged in user's name along with a logout option
+ */
 import { Component, EventEmitter, AfterViewInit, Output, Input, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeedetailService } from '../service/employeedetail.service';

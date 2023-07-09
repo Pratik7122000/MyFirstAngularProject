@@ -15,6 +15,11 @@ mat-card-content{
 button{
     margin-right: 20px;
 }
+.note{
+    color:#d50707;
+    text-align: center;
+    font-size: 13px;
+}
 mat-form-field{
    padding: 5%;
     width: 100%;

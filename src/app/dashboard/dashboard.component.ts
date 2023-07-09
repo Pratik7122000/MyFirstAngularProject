@@ -1,3 +1,8 @@
+/*
+The dashboard component displays graphical representation of the 
+employee's individual progress, along with project wise employee and total progress.
+In this component Chart.js library is used to create the various graphs and pie charts
+*/
 import { OnInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js'
 import { EmployeedetailService } from '../service/employeedetail.service';
@@ -34,7 +39,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.Getallemployee();
   }
-
+  //getting all amployee data
   Getallemployee() {
     this.service.GetallEmployee().subscribe((data: EmployeeInterface[]) => {
       console.log(data);
@@ -43,18 +48,19 @@ export class DashboardComponent implements OnInit {
 
       if (this.userdata != null) {
         for (let i = 0; i < this.userdata.length; i++) {
+          // pushing values into different arrays
           this.labeldata.push(this.userdata[i].name);
           this.taskGiven.push(this.userdata[i].taskGiven);
           this.taskCompleted.push(this.userdata[i].taskCompleted);
           this.projectName.push(this.userdata[i].project);
-
+          // calculating progress
           const prog = (this.userdata[i].taskCompleted / this.userdata[i].taskGiven) * 100;
           this.taskProgress.push(prog);
-
+          // putting project names into sets
           this.projectEntries.add(this.userdata[i].project);
           const [first] = this.projectEntries;
           const [, second] = this.projectEntries;
-
+          // calculating progress on project basis
           if (first == this.userdata[i].project) {
             this.MultidataP1.push([this.userdata[i].name, prog]);
             this.TotalTaskP1 = this.TotalTaskP1 + this.userdata[i].taskGiven;
@@ -97,14 +103,14 @@ export class DashboardComponent implements OnInit {
         this.RenderPieChart1((this.TotalProgressP1 / this.TotalTaskP1) * 100,
           ((this.TotalTaskP1 - this.TotalProgressP1) / this.TotalTaskP1) * 100,
           this.colordata, this.projectName[0]);
-        // Pie Chart  2
+
 
         console.log("TP: " + this.TotalProgressP2)
         console.log("TR: " + this.TotalTaskP2)
 
         console.log("TP: " + (this.TotalProgressP2 / this.TotalTaskP2) * 100)
         console.log("TR: " + ((this.TotalTaskP2 - this.TotalProgressP2) / this.TotalTaskP2) * 100)
-
+        // Pie Chart  2
         this.RenderPieChart2((this.TotalProgressP2 / this.TotalTaskP2) * 100,
           ((this.TotalTaskP2 - this.TotalProgressP2) / this.TotalTaskP2) * 100,
           this.colordata, this.projectName[1]);
@@ -113,11 +119,12 @@ export class DashboardComponent implements OnInit {
 
     });
   }
+  // creating random colors
   getRandomColor() {
     var color = Math.floor(0x1000000 * Math.random()).toString(16);
     return '#' + ('000000' + color).slice(-6);
   }
-
+  // chart definitions
   RenderChart(labeldata: any, taskProgress: any, colordata: any) {
 
     const myChart = new Chart('barchart', {
@@ -125,7 +132,7 @@ export class DashboardComponent implements OnInit {
       data: {
         labels: labeldata,
         datasets: [{
-          label: 'Individual PRogress',
+          label: 'Individual Progress',
           data: taskProgress,
           backgroundColor: colordata,
           borderColor: [

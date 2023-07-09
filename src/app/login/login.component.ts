@@ -1,3 +1,10 @@
+/*
+This is the login component. This components deals with the login process for the user.
+This component has a form where it accepts the Employee ID and password. Pattern is used so that 
+the fields will accepts the required entry.
+Based on the provided credentials, role and status the user will either be able to login or
+proper error notification will be provided to him/her.
+ */
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -50,8 +57,7 @@ export class LoginComponent {
         //console.log("userdsta  "+this.userdata.id);
         console.log("response  " + JSON.stringify(response[0]));
         //Checking the creds provided by the user to the creds provided by the service
-        if (this.userdata.id == this.loginform.value.id && this.userdata.password == this.loginform.value.password)
-        {
+        if (this.userdata.id == this.loginform.value.id && this.userdata.password == this.loginform.value.password) {
           if (this.userdata.isactive) {
             //Setting value in the session storage
             sessionStorage.setItem('id', String(this.userdata.id));
@@ -60,13 +66,12 @@ export class LoginComponent {
             console.log("the user pasas: " + this.userdata.password);
             //Setting value in the local storage
             localStorage.setItem("EmpName", String(this.userdata.name))
-            this.router.navigate([''], {
-              queryParams: { data: this.userdata.id }
-            });
+            localStorage.setItem('EmpId', String(this.userdata.id));
+            this.router.navigate(['home', this.userdata.id]
+            );
             this.username = this.userdata.name;
             console.log("this.username " + this.username);
           } else {
-            // alert("Inactive User");
             alertify.set('notifier', 'position', 'top-center');
             alertify.error('Inactive User');
             console.log("the user id: " + this.userdata.id);

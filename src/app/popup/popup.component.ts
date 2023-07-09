@@ -1,3 +1,8 @@
+/*
+This is the popup component. This components deals with the creation and modification of employee data. 
+This component is a form that allows the user based on its role to create and modify employee details.
+Patterns are used in this component.
+ */
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';

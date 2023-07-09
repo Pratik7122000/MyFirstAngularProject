@@ -1,3 +1,9 @@
+/* 
+This component creates and displays the table that holds all the
+ necesary employee details and also allows the user to implement
+ the CRUD(Create Read Update and Delete)  functionalities. Angular Material 
+ table is used here along with sorting, pagination and search option
+*/
 
 import { OnInit, AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';

@@ -1,3 +1,8 @@
+/*This is the register component. This is a form component that deals with the 
+creation of new employees without the admin login. Here the user will only pass
+his/her name and a password that satisfies the requirement. After that the EMployee ID will
+be provided to the user.
+ */
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EmployeedetailService } from '../service/employeedetail.service';
