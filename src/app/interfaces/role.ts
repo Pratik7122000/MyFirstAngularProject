@@ -1,7 +1,7 @@
 export interface RoleInterface {
 
     
-    "name": string,
-    "code": string
+    "name": string, //role name
+    "code": string  //role code name
   
   }

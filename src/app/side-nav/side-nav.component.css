@@ -40,13 +40,16 @@ h2{
 }*/
 
  .choices{
-    color: #94a3b8 !important;
+    color: #c8cacd !important;
     font-size: 1.3rem;
     height: 44px !important;
     margin-left: 0px;
     margin-bottom: 4px;
 } 
-
+.list-item-active{
+    background-color:#153561;
+    
+}
 .choices:hover {
     color: #f2f5f7 !important;
   }

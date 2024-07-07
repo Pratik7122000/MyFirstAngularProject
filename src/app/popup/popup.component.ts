@@ -21,7 +21,7 @@ export class PopupComponent implements OnInit {
   editdata!: EmployeeInterface;
 roleSelect:any;
   isadmin=false;
-
+//Injecting necessary dependencies in the constructor
   constructor(private builder: FormBuilder, private route:Router,
      private dialog: MatDialog, private api: EmployeedetailService,
     @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -29,6 +29,7 @@ roleSelect:any;
       this.rolelist = res;
     });
     console.log("GetUserRole");
+    //setting role in the session storage
     let role=sessionStorage.getItem('role');
     if(role=='admin'){
       this.isadmin=true;
@@ -38,30 +39,9 @@ roleSelect:any;
 
   ngOnInit(): void {
     console.log("inside void 1");
-    // console.log("Inisiated");
-    // console.log("Inisiated emp: "+this.data);
-
     if (this.data.id != '' && this.data.id != null) {
       console.log("inside GetEmployeebycode "+this.data.id);
-
-      // this.api.GetEmployeebycode(this.data.id).subscribe((response:EmployeeInterface[]) => {
-      //   this.editdata = response[0];
-      //   console.log("getEmpId:" + this.editdata.id);
-      //   this.employeeform.setValue({
-      //     id: this.editdata.id, name: this.editdata.name, project: this.editdata.project,
-      //     taskDetails: this.editdata.taskDetails, taskGiven: this.editdata.taskGiven,
-      //     taskCompleted: this.editdata.taskCompleted, manager: this.editdata.manager,
-      //     skill: this.editdata.skill,
-      //     password: this.editdata.password,
-      //     role: this.editdata.role, isactive: this.editdata.isactive
-
-      //   })
-      //   // if(this.editdata.role=='admin'){
-      //   //   this.isadmin=true;
-      //   //   this.roleSelect=this.editdata.role;
-      //   // }
-      //   console.log("role "+this.isadmin);
-      // });
+      //Setting values in the form
       this.employeeform.setValue({
         id: this.data.id, name: this.data.name, project: this.data.project,
         taskDetails: this.data.taskDetails, taskGiven: this.data.taskGiven,
@@ -76,6 +56,7 @@ roleSelect:any;
 
   }
   rolelist: any;
+  //creating the form with requirements and validations
   employeeform = this.builder.group({
     id: this.builder.control({ value:0,disabled: true }),
     name: this.builder.control('', Validators.compose([
@@ -100,12 +81,13 @@ roleSelect:any;
 
   SaveEmployee() {
 
-
+//patching manager's name
     this.employeeform.patchValue({
 
       manager: "Alex",
 
     });
+    //validating form details and saving the details in the data base
     if (this.employeeform.valid) {
 
       const editid = this.employeeform.getRawValue().id;
